@@ -1,20 +1,20 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
-  name: kyverno-policyset
+  name: kyverno-deploy-bestpractise
 placementBindingDefaults:
-  name: kyverno-policyset
+  name: kyverno-deploy-bestpractise
 policyDefaults:
   policyAnnotations: {"policy.open-cluster-management.io/disable-templates": "true"}
   categories:
     - CM Configuration Management
   controls: 
     - CM-2 Baseline Configuration
-  namespace: kyverno-policyset
+  namespace: kyverno-deploy-bestpractise
   remediationAction: enforce
   severity: medium
-  policySets:
-    - kyverno-policyset
+  deploy-bestpractises:
+    - kyverno-deploy-bestpractise
   standards:
     - generic
   placementPath:  
@@ -228,9 +228,9 @@ policies:
   disabled: false
   manifests:
     - path: input/authorization/protect-default-scc
-policySets:
-  - description: kyverno-policyset to apply set of kyverno-policies.
-    name: kyverno-policyset
+deploy-bestpractises:
+  - description: kyverno-deploy-bestpractise to apply set of kyverno-policies.
+    name: kyverno-deploy-bestpractise
     placement:
       placementPath: placement.yaml
 
