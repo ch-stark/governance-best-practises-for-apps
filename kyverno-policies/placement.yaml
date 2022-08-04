@@ -2,7 +2,7 @@ apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: Placement
 metadata:
   name: kyverno-placement
-  namespace: kyverno-policyset
+  namespace: kyverno-deploy-bestpractise
 spec:
   predicates:
   - requiredClusterSelector:
