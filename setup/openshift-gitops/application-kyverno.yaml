@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kyverno-policyset
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: kyverno-policyset
+    name: 'in-cluster'
+  project: default
+  source:
+    path: kyverno-policies
+    repoURL: https://github.com/ch-stark/governance-best-practises-for-apps
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

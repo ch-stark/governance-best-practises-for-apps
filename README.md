@@ -10,3 +10,13 @@ Based on the following links:
 we look to create a PolicySet based on RHACM-Policies and Kyverno Integration
 
 
+## How to run it
+```shell
+oc apply -f https://raw.githubusercontent.com/ch-stark/governance-best-practises-for-apps/main/setup/openshift-gitops
+oc apply -f https://raw.githubusercontent.com/ch-stark/governance-best-practises-for-apps/main/setup/rhacm-policies
+until oc apply -f https://raw.githubusercontent.com/ch-stark/governance-best-practises-for-apps/main/setup/rhacm-policies; do sleep 15; done
+```
+
+
+
+
