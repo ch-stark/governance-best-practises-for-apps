@@ -57,7 +57,7 @@ spec:
       value: /etc/kustomize/plugin
     initContainers:
     - name: policy-generator-install
-      image: quay.io/stolostron/multicluster-operators-subscription:2.5.2-SNAPSHOT-2022-08-04-20-26-44
+      image: quay.io/stolostron/multicluster-operators-subscription:2.6.0-SNAPSHOT-2022-08-05-14-27-53
       command: ["/bin/bash"]
       args: ["-c", "cp /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator/PolicyGenerator /policy-generator/PolicyGenerator"]
       volumeMounts:
