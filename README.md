@@ -43,6 +43,12 @@ name: disallow-latest-tag (can also be changed to allow) # The ':latest' tag is 
       a specific version of an application Pod. This policy validates that the image
       specifies a tag and that it is not called `latest`.      
 
+name: check-routes # HTTP traffic is not encrypted and hence insecure. This policy prevents configuration of OpenShift HTTP   
+      routes.
+
+
+
+
 ## How to run it
 ```shell
 oc apply -f https://raw.githubusercontent.com/ch-stark/governance-best-practises-for-apps/main/setup/openshift-gitops
