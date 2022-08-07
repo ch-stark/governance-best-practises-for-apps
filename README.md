@@ -11,8 +11,35 @@ we look to create a PolicySet based on RHACM-Policies and Kyverno Integration
 
 ## List of Policies 
 
+name: create-default-pdb # A PodDisruptionBudget limits the number of Pods of a replicated application that
+      are down simultaneously from voluntary disruptions. For example, a quorum-based
+      application would like to ensure that the number of replicas running is never brought
+      below the number needed for a quorum. As an application owner, you can create a PodDisruptionBudget (PDB)
+      for each application. This policy will create a PDB resource whenever a new Deployment is created.
 
+name: scale-deployment-zero # If a Deployment's Pods are seen crashing multiple times it usually indicates
+      there is an issue that must be manually resolved. Removing the failing Pods and
+      marking the Deployment is often a useful troubleshooting step. This policy watches
+      existing Pods and if any are observed to have restarted more than
+      once, indicating a potential crashloop, Kyverno scales its parent deployment to zero
+      and writes an annotation signaling to an SRE team that troubleshooting is needed.
+      It may be necessary to grant additional privileges to the Kyverno ServiceAccount,
+      via one of the existing ClusterRoleBindings or a new one, so it can modify Deployments.
 
+name: validate-probes # Liveness and readiness probes accomplish different goals, and setting both to the same
+      is an anti-pattern and often results in app problems in the future. This policy
+      checks that liveness and readiness probes are not equal.
+name: require-pod-probes # Liveness and readiness probes need to be configured to correctly manage a Pod's
+      lifecycle during deployments, restarts, and upgrades. For each Pod, a periodic
+      `livenessProbe` is performed by the kubelet to determine if the Pod's containers
+      are running or need to be restarted. A `readinessProbe` is used by Services
+      and Deployments to determine if the Pod is ready to receive network traffic.
+      This policy validates that all containers have liveness and readiness probes by
+      ensuring the `periodSeconds` field is greater than zero.
+name: disallow-latest-tag (can also be changed to allow) # The ':latest' tag is mutable and can lead to unexpected errors if
+      the image changes. A best practice is to use an immutable tag that maps to
+      a specific version of an application Pod. This policy validates that the image
+      specifies a tag and that it is not called `latest`.      
 
 ## How to run it
 ```shell
