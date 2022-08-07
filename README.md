@@ -54,6 +54,13 @@ name: allowed-base-images # Building images which specify a base as their origin
       allow list.
 
 
+## Kyverno best prastices
+
+https://kyverno.io/policies/?policytypes=Best%2520Practices
+
+
+
+
 ## How to run it
 ```shell
 oc apply -f https://raw.githubusercontent.com/ch-stark/governance-best-practises-for-apps/main/setup/openshift-gitops
