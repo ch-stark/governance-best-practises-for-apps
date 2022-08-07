@@ -46,7 +46,12 @@ name: disallow-latest-tag (can also be changed to allow) # The ':latest' tag is 
 name: check-routes # HTTP traffic is not encrypted and hence insecure. This policy prevents configuration of OpenShift HTTP   
       routes.
 
-
+name: allowed-base-images # Building images which specify a base as their origin is a good start
+      to improving supply chain security, but over time organizations
+      may want to build an allow list of specific base images which
+      are allowed to be used when constructing containers. This policy ensures
+      that a container's base, found in an OCI annotation, is in a cluster-wide
+      allow list.
 
 
 ## How to run it
