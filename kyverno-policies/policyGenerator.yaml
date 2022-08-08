@@ -69,7 +69,7 @@ policies:
   disabled: false
   manifests:
     - path: input/security-context-contraint  
-- name: disallow_latest_tag
+- name: disallowlatesttag
   categories:
     - setup
   controls: 
