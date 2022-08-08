@@ -7,6 +7,8 @@ placementBindingDefaults:
 policyDefaults:
   informKyvernoPolicies: true
   configurationPolicyAnnotations: {"policy.open-cluster-management.io/disable-templates": "true"}
+  policySets:
+    - kyverno-deploy-bestpractise
   categories:
     - CM Configuration Management
   controls: 
