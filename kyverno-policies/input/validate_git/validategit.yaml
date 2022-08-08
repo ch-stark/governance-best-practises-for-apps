@@ -23,7 +23,7 @@ spec:
         any:
         - resources:
             kinds:
-              - Applications
+              - Application
               - Applicationset
       validate:
         message: ".spec.url must be from a repository within the myorg organization."
