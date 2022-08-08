@@ -44,8 +44,8 @@ policies:
     - setup
   disabled: false
   manifests:
-    - path: input/poddisruptionbudget 
-- name: routes
+    - path: input/routes 
+- name: poddisruptionbudget  
   categories:
     - setup
   controls: 
@@ -53,7 +53,7 @@ policies:
   disabled: false
   manifests:
     - path: input/poddisruptionbudget  
-- name: security-context-contraint
+- name: securitycontextconstraint
   categories:
     - setup
   controls: 
