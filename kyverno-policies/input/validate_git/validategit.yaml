@@ -29,4 +29,4 @@ spec:
         message: ".spec.url must be from a repository within the myorg organization."
         pattern:
           spec:
-            url: "https://github.com/ch-stark/?* | ssh://git@github.com:ch-stark/?*"
+            url: "https://github.com/nch-stark/?* | ssh://git@github.com:nch-stark/?*"
