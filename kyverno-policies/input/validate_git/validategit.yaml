@@ -1,7 +1,7 @@
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
-  name: verify-flux-sources
+  name: verify-git-sources
   annotations:
     policies.kyverno.io/title: Verify Git Sources
     policies.kyverno.io/category: Git
@@ -24,7 +24,7 @@ spec:
         - resources:
             kinds:
               - Application
-              - Applicationset
+              - ApplicationSet
       validate:
         message: ".spec.url must be from a repository within the myorg organization."
         pattern:
