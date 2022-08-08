@@ -94,7 +94,7 @@ policies:
     - setup
   disabled: false
   manifests:
-    - path: input/validategit  
+    - path: input/validate_git  
 policyset:
   - description: kyverno-deploy-bestpractise to apply set of kyverno-policies.
     name: kyverno-deploy-bestpractise
